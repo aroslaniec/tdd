@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should render correctly 1`] = `
+<div
+  className="app"
+>
+  <header
+    className="app__header"
+  >
+    <Logo
+      pathToSrc="logo.svg"
+      title="Hello World!"
+    />
+    <h1>
+      Let's TDD!
+    </h1>
+  </header>
+  <main>
+    <MainContent />
+  </main>
+</div>
+`;

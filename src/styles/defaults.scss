@@ -1,3 +1,24 @@
+@import "./mixins";
+@import "./normalize";
+@import "./variables";
+
+$min_width: 320px;
+$max_width: 1200px;
+$min_font: 8px;
+$max_font: 10px;
+
+html {
+  @include fluid-type($min_width, $max_width, $min_font, $max_font);
+  box-sizing: border-box;
+  background-color: $background-secondary;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -6,6 +27,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
 }
 
 code {

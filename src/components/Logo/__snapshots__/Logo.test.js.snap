@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Logo should render correctly 1`] = `
+<div
+  className="logo"
+>
+  <div
+    className="logo__wrapper"
+  >
+    <img
+      alt="My awesome TDD App!"
+      src="./lorem-ipsum.png"
+    />
+  </div>
+</div>
+`;
