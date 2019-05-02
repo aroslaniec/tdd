@@ -70,7 +70,7 @@ class MainContent extends Component {
         </div>
         <div className="main-content__event-summary-wrapper">
           <h3>Test-First Version:</h3>
-          <TDDEventSummary />
+          <TDDEventSummary {...eventSummaryProps} />
         </div>
         <div className="main-content__event-summary-wrapper">
           <h3>Code-First Version:</h3>
