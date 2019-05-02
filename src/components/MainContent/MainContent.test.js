@@ -15,4 +15,10 @@ describe("MainContent", () => {
 
     expect(wrapper.hasClass("main-content")).toBeTruthy();
   });
+
+  it("should display <TDDEventSummary />", () => {
+    const wrapper = shallow(<MainContent {...MOCKED_PROPS} />);
+
+    expect(wrapper.find(".tdd-event-summary").length).toBe(1);
+  });
 });
