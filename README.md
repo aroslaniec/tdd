@@ -1,3 +1,32 @@
+# Requirements list
+
+- Use `event` response structure: <br>
+  ```json
+  {
+    "rangeStart": "DateString",
+    "rangeEnd": "DateString",
+    "periods": [
+      {
+        "startDate": "DateString",
+        "endDate": "DateString"
+      }
+    ]
+  }
+  ```
+- Display Event Rounds heading info:
+  - Round number
+  - Start date-time if not finished
+  - End date-time if already finished
+  - Finished round should display `check` icon
+- Display graphical representation of event
+
+- Display Event status:
+  - Next Round start date-time if any
+  - Previous Round end date-time if any
+
+<br>
+<br>
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
