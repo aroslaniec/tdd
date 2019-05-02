@@ -2,6 +2,7 @@ import React from "react";
 import { shallow } from "enzyme";
 
 import MainContent from "./MainContent";
+import TDDEventSummary from "../TDDEventSummary/TDDEventSummary";
 
 describe("MainContent", () => {
   let MOCKED_PROPS = {};
@@ -19,6 +20,6 @@ describe("MainContent", () => {
   it("should display <TDDEventSummary />", () => {
     const wrapper = shallow(<MainContent {...MOCKED_PROPS} />);
 
-    expect(wrapper.find(".tdd-event-summary").length).toBe(1);
+    expect(wrapper.find(TDDEventSummary).length).toBe(1);
   });
 });

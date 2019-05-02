@@ -9,6 +9,7 @@ import {
   getDayInPast,
   getNow
 } from "../../utils/dateTime";
+import TDDEventSummary from "../TDDEventSummary";
 
 class MainContent extends Component {
   static propTypes = {};
@@ -69,7 +70,7 @@ class MainContent extends Component {
         </div>
         <div className="main-content__event-summary-wrapper">
           <h3>Test-First Version:</h3>
-          <div className="tdd-event-summary" />
+          <TDDEventSummary />
         </div>
         <div className="main-content__event-summary-wrapper">
           <h3>Code-First Version:</h3>
