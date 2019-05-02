@@ -1,6 +1,6 @@
 # Requirements list
 
-- Use `event` response structure: <br>
+- ~~Use `event` response structure~~: <br>
   ```json
   {
     "rangeStart": "DateString",

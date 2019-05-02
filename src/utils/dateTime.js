@@ -3,11 +3,13 @@ import moment from "moment";
 import { DEFAULT_DATETIME_FORMAT_TO_SHOW_DATETIMES } from "../constants";
 
 export const getNow = () => moment.utc().format();
+
 export const getDayInPast = amount =>
   moment
     .utc()
     .subtract(amount, "days")
     .format();
+
 export const getDayInFuture = amount =>
   moment
     .utc()

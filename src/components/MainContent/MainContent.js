@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import "./MainContent.scss";
-import event from "../../fixtures/event";
+import eventResponse from "../../fixtures/event";
 import EventSummary from "../EventSummary";
 import {
   getDateFormatted,
@@ -20,7 +20,7 @@ class MainContent extends Component {
     super(props);
 
     this.state = {
-      actualDateTime: event.actualDateTime
+      actualDateTime: eventResponse.actualDateTime
     };
   }
 
@@ -28,7 +28,7 @@ class MainContent extends Component {
     const { actualDateTime } = this.state;
 
     const eventSummaryProps = {
-      ...event,
+      ...eventResponse,
       actualDateTime
     };
 
