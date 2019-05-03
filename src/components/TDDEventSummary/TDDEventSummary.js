@@ -8,7 +8,13 @@ class TDDEventSummary extends Component {
   static displayName = "TDDEventSummary";
 
   render() {
-    return <div className="tdd-event-summary">It works!</div>;
+    return (
+      <div className="tdd-event-summary">
+        {this.props.periods.map(period => (
+          <div className="tdd-event-summary-round-heading" />
+        ))}
+      </div>
+    );
   }
 }
 
