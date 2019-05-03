@@ -16,4 +16,12 @@ describe("TDDEventSummary", () => {
 
     expect(wrapper.hasClass("tdd-event-summary")).toBeTruthy();
   });
+
+  it("should render <TDDEventSummaryRoundHeading /> for each round", () => {
+    const wrapper = shallow(<TDDEventSummary {...MOCKED_PROPS} />);
+
+    expect(wrapper.find(".tdd-event-summary-round-heading").length).toBe(
+      MOCKED_PROPS.periods.length
+    );
+  });
 });
