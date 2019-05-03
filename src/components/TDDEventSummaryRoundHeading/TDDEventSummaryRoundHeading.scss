@@ -4,3 +4,24 @@
   font-size: 1.5rem;
   flex: 1;
 }
+
+.tdd-event-summary-round-heading--finished {
+  font-weight: 700;
+}
+
+.tdd-event-summary-round-heading__title-wrapper {
+  display: flex;
+  align-items: center;
+  height: 3rem;
+  margin-top: -1rem;
+}
+
+.tdd-event-summary-round-heading__icon {
+  display: inline-block;
+  margin-left: 2rem;
+  border: 1px solid #212121;
+  border-radius: 50%;
+  height: 2rem;
+  width: 2rem;
+  text-align: center;
+}

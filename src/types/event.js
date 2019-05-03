@@ -1,15 +1,24 @@
-import { string, arrayOf, shape, oneOfType, object } from "prop-types";
+import { string, arrayOf, shape, oneOfType, object, number } from "prop-types";
+
+export const actualDateTime = {
+  actualDateTime: oneOfType([string, object])
+};
+
+export const round = {
+  ...actualDateTime,
+  roundNumber: number.isRequired
+};
+
+export const period = {
+  startDate: string.isRequired,
+  endDate: string.isRequired
+};
 
 const types = {
-  actualDateTime: oneOfType([string, object]),
+  ...actualDateTime,
   startDate: string,
   endDate: string,
-  periods: arrayOf(
-    shape({
-      startDate: string.isRequired,
-      endDate: string.isRequired
-    }).isRequired
-  )
+  periods: arrayOf(shape(period).isRequired)
 };
 
 export default types;

@@ -14,9 +14,10 @@ class TDDEventSummary extends Component {
     return (
       <div className="tdd-event-summary">
         <div className="tdd-event-summary__rounds-wrapper">
-          {this.props.periods.map(period => (
+          {this.props.periods.map((period, index) => (
             <TDDEventSummaryRoundHeading
               {...period}
+              roundNumber={index + 1}
               actualDateTime={this.props.actualDateTime}
               key={getPeriodKey(period)}
             />

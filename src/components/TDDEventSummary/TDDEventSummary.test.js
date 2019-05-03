@@ -33,6 +33,7 @@ describe("TDDEventSummary", () => {
     wrapper.find(TDDEventSummaryRoundHeading).forEach((node, index) => {
       expect(node.props()).toEqual({
         actualDateTime: eventResponse.actualDateTime,
+        roundNumber: index + 1,
         ...eventResponse.periods[index]
       });
 
