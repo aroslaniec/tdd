@@ -4,6 +4,7 @@ import { shallow } from "enzyme";
 import eventResponse from "../../fixtures/event";
 import TDDEventSummary from "./TDDEventSummary";
 import TDDEventSummaryRoundHeading from "../TDDEventSummaryRoundHeading";
+import { getPeriodKey } from "./TDDEventSummary.service";
 
 describe("TDDEventSummary", () => {
   let MOCKED_PROPS = {};
@@ -34,6 +35,8 @@ describe("TDDEventSummary", () => {
         actualDateTime: eventResponse.actualDateTime,
         ...eventResponse.periods[index]
       });
+
+      expect(node.key()).toBe(getPeriodKey(MOCKED_PROPS.periods[index]));
     });
   });
 });
