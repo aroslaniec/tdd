@@ -16,4 +16,12 @@ describe("TDDEventSummaryRoundHeading", () => {
 
     expect(wrapper.hasClass("tdd-event-summary-round-heading")).toBeTruthy();
   });
+
+  it("should render round title", () => {
+    const wrapper = shallow(<TDDEventSummaryRoundHeading {...MOCKED_PROPS} />);
+
+    expect(wrapper.find(".tdd-event-summary-round-heading__title").text()).toBe(
+      `Round ${MOCKED_PROPS.roundNumber}`
+    );
+  });
 });
