@@ -2,8 +2,9 @@ import React, { Component } from "react";
 
 import "./TDDEventSummary.scss";
 import TDDEventSummaryRoundHeading from "../TDDEventSummaryRoundHeading";
-import { getPeriodKey } from "./TDDEventSummary.service";
+import { getPeriodKey, parseEventForTimeLine } from "./TDDEventSummary.service";
 import types from "../../types/event";
+import TimeLineWithPeriods from "../TimeLineWithPeriods";
 
 class TDDEventSummary extends Component {
   static propTypes = { ...types };
@@ -22,6 +23,9 @@ class TDDEventSummary extends Component {
               key={getPeriodKey(period)}
             />
           ))}
+        </div>
+        <div className="tdd-event-summary__time-line-wrapper">
+          <TimeLineWithPeriods {...parseEventForTimeLine(this.props)} />
         </div>
       </div>
     );

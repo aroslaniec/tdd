@@ -18,7 +18,7 @@
   - ~~Start date-time if not finished~~
   - ~~End date-time if already finished~~
   - ~~Finished round should display `check` icon~~
-- Display graphical representation of event
+- ~~Display graphical representation of event~~
 
 - Display Event status:
   - Next Round start date-time if any

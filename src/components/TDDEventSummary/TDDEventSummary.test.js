@@ -4,7 +4,8 @@ import { shallow } from "enzyme";
 import eventResponse from "../../fixtures/event";
 import TDDEventSummary from "./TDDEventSummary";
 import TDDEventSummaryRoundHeading from "../TDDEventSummaryRoundHeading";
-import { getPeriodKey } from "./TDDEventSummary.service";
+import { getPeriodKey, parseEventForTimeLine } from "./TDDEventSummary.service";
+import TimeLineWithPeriods from "../TimeLineWithPeriods";
 
 describe("TDDEventSummary", () => {
   let MOCKED_PROPS = {};
@@ -39,5 +40,13 @@ describe("TDDEventSummary", () => {
 
       expect(node.key()).toBe(getPeriodKey(MOCKED_PROPS.periods[index]));
     });
+  });
+
+  it("should render <TimeLineWithPeriods />", () => {
+    const wrapper = shallow(<TDDEventSummary {...MOCKED_PROPS} />);
+    const timeLineNode = wrapper.find(TimeLineWithPeriods);
+
+    expect(timeLineNode.length).toBe(1);
+    expect(timeLineNode.props()).toEqual(parseEventForTimeLine(MOCKED_PROPS));
   });
 });
