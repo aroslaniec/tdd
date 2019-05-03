@@ -25,4 +25,15 @@ describe("TDDEventSummary", () => {
       MOCKED_PROPS.periods.length
     );
   });
+
+  it("should pass `event.periods` response item as props to <TDDEventSummaryRoundHeading />", () => {
+    const wrapper = shallow(<TDDEventSummary {...MOCKED_PROPS} />);
+
+    wrapper.find(TDDEventSummaryRoundHeading).forEach((node, index) => {
+      expect(node.props()).toEqual({
+        actualDateTime: eventResponse.actualDateTime,
+        ...eventResponse.periods[index]
+      });
+    });
+  });
 });
