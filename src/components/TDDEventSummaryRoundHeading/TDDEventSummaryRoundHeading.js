@@ -8,7 +8,13 @@ class TDDEventSummaryRoundHeading extends Component {
   static displayName = "TDDEventSummary";
 
   render() {
-    return <div className="tdd-event-summary-round-heading">It works!</div>;
+    return (
+      <div className="tdd-event-summary-round-heading">
+        <div className="tdd-event-summary-round-heading__title">
+          Round {this.props.roundNumber || "undefined"}
+        </div>
+      </div>
+    );
   }
 }
 
