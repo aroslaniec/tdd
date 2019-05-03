@@ -2,7 +2,12 @@ import React, { Component } from "react";
 
 import "./TDDEventSummary.scss";
 import TDDEventSummaryRoundHeading from "../TDDEventSummaryRoundHeading";
-import { getPeriodKey, parseEventForTimeLine } from "./TDDEventSummary.service";
+import {
+  getDurationFromLatestFinishedRound,
+  getDurationUntilClosestNotStartedRound,
+  getPeriodKey,
+  parseEventForTimeLine
+} from "./TDDEventSummary.service";
 import types from "../../types/event";
 import TimeLineWithPeriods from "../TimeLineWithPeriods";
 
@@ -12,6 +17,15 @@ class TDDEventSummary extends Component {
   static displayName = "TDDEventSummary";
 
   render() {
+    const latestFinishedRoundDuration = getDurationFromLatestFinishedRound(
+      this.props.periods,
+      this.props.actualDateTime
+    );
+    const closestNotStartedRoundDuration = getDurationUntilClosestNotStartedRound(
+      this.props.periods,
+      this.props.actualDateTime
+    );
+
     return (
       <div className="tdd-event-summary">
         <div className="tdd-event-summary__rounds-wrapper">
@@ -26,6 +40,19 @@ class TDDEventSummary extends Component {
         </div>
         <div className="tdd-event-summary__time-line-wrapper">
           <TimeLineWithPeriods {...parseEventForTimeLine(this.props)} />
+        </div>
+        <div className="tdd-event-summary__current-status">
+          {latestFinishedRoundDuration ? (
+            <div className="tdd-event-summary__current-status-since-last">
+              Since Round Ended: <strong>{latestFinishedRoundDuration}</strong>
+            </div>
+          ) : null}
+          {closestNotStartedRoundDuration ? (
+            <div className="tdd-event-summary__current-status-until-next">
+              Until Next Round:{" "}
+              <strong>{closestNotStartedRoundDuration}</strong>
+            </div>
+          ) : null}
         </div>
       </div>
     );
