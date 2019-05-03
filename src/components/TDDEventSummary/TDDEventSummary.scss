@@ -10,8 +10,11 @@
 
 .tdd-event-summary__rounds-wrapper {
   display: flex;
-  margin-bottom: 2rem;
-  margin-top: -1rem;
+  margin-right: -2rem;
+
+  .tdd-event-summary-round-heading {
+    padding-right: 2rem;
+  }
 }
 
 .tdd-event-summary__round-details {
